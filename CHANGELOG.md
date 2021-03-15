@@ -5,6 +5,14 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+# [0.0.1](https://github.com/morlay/logr/compare/v0.0.0...v0.0.1)
+
+### Bug Fixes
+
+* **fix** stdr with set level ([74b3247](https://github.com/morlay/logr/commit/74b324732e652887a3fefe9617930966ffe8afe2))
+
+
+
 # 0.0.0
 
 ### Features
