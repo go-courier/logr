@@ -5,6 +5,14 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+# [0.0.2](https://github.com/morlay/logr/compare/v0.0.1...v0.0.2)
+
+### Bug Fixes
+
+* **fix** interface LevelSetter ([e310ef4](https://github.com/morlay/logr/commit/e310ef4bb437c4cff6e86bb45db49e8662887b29))
+
+
+
 # [0.0.1](https://github.com/morlay/logr/compare/v0.0.0...v0.0.1)
 
 ### Bug Fixes
