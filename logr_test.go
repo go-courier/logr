@@ -15,7 +15,7 @@ func ExampleLogger() {
 	// Output:
 }
 
-func ExampleLoggerWithTracer() {
+func ExampleLogger_Start() {
 	ctx := WithLogger(context.Background(), StdLogger())
 
 	_, log := Start(ctx, "span", "k", "k")
