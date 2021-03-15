@@ -7,7 +7,7 @@ import (
 )
 
 func StdLogger() Logger {
-	return &stdLogger{lvl: stdLevel}
+	return &stdLogger{lvl: DebugLevel}
 }
 
 type stdLogger struct {
@@ -16,10 +16,8 @@ type stdLogger struct {
 	keyAndValues []interface{}
 }
 
-var stdLevel = DebugLevel
-
-func SetStdLevel(lvl Level) {
-	stdLevel = lvl
+func (d *stdLogger) SetLevel(lvl Level) {
+	d.lvl = lvl
 }
 
 func (d *stdLogger) WithValues(keyAndValues ...interface{}) Logger {

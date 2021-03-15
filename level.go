@@ -5,6 +5,10 @@ import (
 	"strings"
 )
 
+type LevelSetter interface {
+	SetLevel(lvl Level)
+}
+
 // Level type
 type Level uint32
 
