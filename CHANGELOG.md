@@ -5,6 +5,14 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+# [0.1.0](https://github.com/morlay/logr/compare/v0.0.2...v0.1.0)
+
+### Features
+
+* **feat** drop unused levels ([ead06fd](https://github.com/morlay/logr/commit/ead06fd94051c335b25c04d35f32863a038e7605))
+
+
+
 # [0.0.2](https://github.com/morlay/logr/compare/v0.0.1...v0.0.2)
 
 ### Bug Fixes
