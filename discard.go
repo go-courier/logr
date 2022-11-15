@@ -9,34 +9,25 @@ func Discard() Logger {
 type discardLogger struct {
 }
 
-func (d *discardLogger) WithValues(keyAndValues ...interface{}) Logger {
+func (d *discardLogger) WithValues(keyAndValues ...any) Logger {
 	return d
 }
 
-func (d *discardLogger) Start(ctx context.Context, name string, keyAndValues ...interface{}) (context.Context, Logger) {
+func (d *discardLogger) Start(ctx context.Context, name string, keyAndValues ...any) (context.Context, Logger) {
 	return ctx, d
 }
 
 func (discardLogger) End() {
 }
 
-func (discardLogger) Trace(format string, args ...interface{}) {
+func (discardLogger) Debug(format string, args ...any) {
 }
 
-func (discardLogger) Debug(format string, args ...interface{}) {
-}
-
-func (discardLogger) Info(format string, args ...interface{}) {
+func (discardLogger) Info(format string, args ...any) {
 }
 
 func (discardLogger) Warn(err error) {
 }
 
 func (discardLogger) Error(err error) {
-}
-
-func (discardLogger) Fatal(err error) {
-}
-
-func (discardLogger) Panic(err error) {
 }
