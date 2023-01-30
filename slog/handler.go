@@ -1,6 +1,8 @@
 package slog
 
 import (
+	"context"
+
 	"golang.org/x/exp/slog"
 )
 
@@ -24,6 +26,6 @@ func (h *handler) WithGroup(name string) slog.Handler {
 	return &handler{h: h.h.WithGroup(name)}
 }
 
-func (h *handler) Enabled(l slog.Level) bool {
-	return l >= slog.DebugLevel
+func (h *handler) Enabled(ctx context.Context, l slog.Level) bool {
+	return l >= slog.LevelDebug
 }

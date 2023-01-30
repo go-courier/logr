@@ -48,24 +48,24 @@ func (d *logger) End() {
 }
 
 func (d *logger) Debug(format string, args ...any) {
-	if !d.slog.Enabled(slog.DebugLevel) {
+	if !d.slog.Enabled(slog.LevelDebug) {
 		return
 	}
-	d.slog.LogDepth(0, slog.DebugLevel, fmt.Sprintf(format, args...))
+	d.slog.LogDepth(0, slog.LevelDebug, fmt.Sprintf(format, args...))
 }
 
 func (d *logger) Info(format string, args ...any) {
-	if !d.slog.Enabled(slog.InfoLevel) {
+	if !d.slog.Enabled(slog.LevelInfo) {
 		return
 	}
-	d.slog.LogDepth(0, slog.InfoLevel, fmt.Sprintf(format, args...))
+	d.slog.LogDepth(0, slog.LevelInfo, fmt.Sprintf(format, args...))
 }
 
 func (d *logger) Warn(err error) {
-	if !d.slog.Enabled(slog.WarnLevel) {
+	if !d.slog.Enabled(slog.LevelWarn) {
 		return
 	}
-	d.slog.LogDepth(0, slog.WarnLevel, err.Error(), slog.Any("err", err))
+	d.slog.LogDepth(0, slog.LevelWarn, err.Error(), slog.Any("err", err))
 }
 
 func (d *logger) Error(err error) {
