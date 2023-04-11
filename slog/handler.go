@@ -14,8 +14,8 @@ type handler struct {
 	h slog.Handler
 }
 
-func (h *handler) Handle(r slog.Record) error {
-	return h.h.Handle(r)
+func (h *handler) Handle(ctx context.Context, r slog.Record) error {
+	return h.h.Handle(ctx, r)
 }
 
 func (h *handler) WithAttrs(attrs []slog.Attr) slog.Handler {
