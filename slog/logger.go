@@ -3,10 +3,10 @@ package slog
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"strings"
 
 	"github.com/go-courier/logr"
-	"golang.org/x/exp/slog"
 )
 
 func Logger(l *slog.Logger) logr.Logger {

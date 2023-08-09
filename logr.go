@@ -21,8 +21,10 @@ type Logger interface {
 	Debug(msg string, args ...any)
 	// Info info
 	Info(msg string, args ...any)
+
 	// Warn
 	Warn(err error)
+
 	// Error
 	Error(err error)
 }
