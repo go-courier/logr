@@ -71,5 +71,5 @@ func (d *logger) Warn(err error) {
 }
 
 func (d *logger) Error(err error) {
-	d.slog.Error(err.Error(), err)
+	d.slog.Error("", slog.Any("error", err))
 }
