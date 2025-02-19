@@ -5,12 +5,23 @@ import (
 	"log/slog"
 )
 
-func Default() *slog.Logger {
-	return slog.New(&handler{h: slog.Default().Handler()})
+func EnableLevel(lvl slog.Level) func(h *handler) {
+	return func(h *handler) {
+		h.lvl = lvl
+	}
+}
+
+func Default(optFns ...func(h *handler)) *slog.Logger {
+	h := &handler{h: slog.Default().Handler()}
+	for _, fn := range optFns {
+		fn(h)
+	}
+	return slog.New(h)
 }
 
 type handler struct {
-	h slog.Handler
+	h   slog.Handler
+	lvl slog.Level
 }
 
 func (h *handler) Handle(ctx context.Context, r slog.Record) error {
@@ -26,5 +37,5 @@ func (h *handler) WithGroup(name string) slog.Handler {
 }
 
 func (h *handler) Enabled(ctx context.Context, l slog.Level) bool {
-	return l >= slog.LevelDebug
+	return l >= h.lvl
 }

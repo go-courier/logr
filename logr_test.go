@@ -2,9 +2,9 @@ package logr_test
 
 import (
 	"context"
+	stdslog "log/slog"
 
 	"github.com/go-courier/logr"
-
 	"github.com/go-courier/logr/slog"
 )
 
@@ -19,7 +19,7 @@ func ExampleLogger() {
 }
 
 func ExampleLogger_Start() {
-	ctx := logr.WithLogger(context.Background(), slog.Logger(slog.Default()))
+	ctx := logr.WithLogger(context.Background(), slog.Logger(slog.Default(slog.EnableLevel(stdslog.LevelDebug))))
 
 	_, log := logr.Start(ctx, "span", "k", "k")
 	defer log.End()
